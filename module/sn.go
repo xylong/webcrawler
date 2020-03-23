@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-// SNGenertor 代表序列号生成器的接口类型
+// SNGenertor 序列号生成器的接口类型
 type SNGenertor interface {
 	// Start 用于获取预设的最小序列号
 	Start() uint64
