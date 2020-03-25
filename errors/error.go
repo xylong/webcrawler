@@ -70,3 +70,19 @@ func (m *myCrawlerError) genFullErrMsg() {
 	m.fullErrMsg = fmt.Sprintf("%s", buffer.String())
 	return
 }
+
+// IllegalParameterError 非法的参数的错误类型
+type IllegalParameterError struct {
+	msg string
+}
+
+// NewIllegalParameterError 创建一个IllegalParameterError类型的实例
+func NewIllegalParameterError(msg string) IllegalParameterError {
+	return IllegalParameterError{
+		msg: fmt.Sprintf("illegal parameter: %s", strings.TrimSpace(msg)),
+	}
+}
+
+func (ipe IllegalParameterError) Error() string {
+	return ipe.msg
+}
